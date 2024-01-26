@@ -21,6 +21,7 @@ export const ListadoApp = () => {
                 <Items nombre="props" visto={true}></Items>
                 <Items nombre="customHooks" visto={false}></Items>
                 <Items nombre="redux" visto={false}></Items>
+                <Items nombre="redux" visto={false}></Items>
             </ol>
         </>
     )
