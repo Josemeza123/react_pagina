@@ -7,7 +7,7 @@ export const ContadorApp = () => {
      <button onClick={function(event){
         console.log(event)
      }}>
-        Soy un botón
+        Soy un botóna
      </button>
     </>
    
