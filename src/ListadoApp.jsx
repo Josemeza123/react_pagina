@@ -9,6 +9,12 @@ const Items = ({ nombre, visto }) => {
 }
 
 export const ListadoApp = () => {
+
+let listadoSecciones=[
+    {nombre:'Instalaciones necesarias', visto:true}
+]
+
+    const [arreglo, setarreglo] = useState([])
     return (
         <>
             <h1>Listado de temas del curso</h1>
