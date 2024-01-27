@@ -6,7 +6,7 @@ const Items = ({ nombre, visto }) => {
     return (
         <li>
             {nombre}
-            {visto && '✅'}
+            {visto ? '✅' : '⛔'}
         </li>
     )
 }
@@ -22,23 +22,36 @@ export const ListadoApp = () => {
     }
 
     let listadoSecciones = [
-        { nombre: 'Instalaciones necesarias', visto: true },
-        { nombre: "vite", visto: true },
-        { nombre: "variables", visto: true },
-        { nombre: "react", visto: true },
-        { nombre: "componentes", visto: true },
-        { nombre: "props", visto: true },
-        { nombre: "customHooks", visto: false },
-        { nombre: "redux", visto: false },
+        { id:1 ,nombre: 'Instalaciones necesarias', visto: true },
+        { id:2 ,nombre: "vite", visto: true },
+        { id:3 ,nombre: "variables", visto: true },
+        { id:4 ,nombre: "react", visto: true },
+        { id:5 ,nombre: "componentes", visto: true },
+        { id:6 ,nombre: "props", visto: true },
+        { id:7 ,nombre: "customHooks", visto: false },
+        { id:8 ,nombre: "redux", visto: false },
     ]
 
     const [arreglo, setarreglo] = useState(listadoSecciones)
+
+    const onAgregarTarea = (val) => {
+        let valor=val.trim()
+        if (valor<1) return
+        const envio={
+            id:arreglo.length+1,
+            nombre:valor,
+            visto:false
+        }
+
+        setarreglo([...arreglo,envio])
+    }
+
     return (
         <>
             <h1>Listado de temas del curso</h1>
-            <AgregarTarea/>
+            <AgregarTarea agregarTarea={onAgregarTarea} />
             <ol>
-                {arreglo.map(item => <Items key={item.nombre} nombre={item.nombre} visto={item.visto}></Items>)}
+                {arreglo.map(item => <Items key={item.id} nombre={item.nombre} visto={item.visto}></Items>)}
             </ol>
 
         </>

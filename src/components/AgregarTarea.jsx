@@ -1,14 +1,15 @@
 import { useState } from "react"
 
-export const AgregarTarea = () => {
+export const AgregarTarea = ({agregarTarea}) => {
     const [inputvalue, setinputvalue] = useState('')
     const onInputChange = (event) => {
         setinputvalue(event.target.value)
     }
 
     const onSubmit = (event) => {
+       
         event.preventDefault()
-        console.log(inputvalue)
+        agregarTarea(inputvalue)
     }
     return (
 
