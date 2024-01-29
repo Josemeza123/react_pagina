@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ListadoApp } from './ListadoApp'
 import './style.css'
+import { UserApp } from './UserApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ListadoApp/>
+    <UserApp/>
   </React.StrictMode>,
 )
